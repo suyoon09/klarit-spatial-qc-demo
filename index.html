@@ -36,8 +36,39 @@
         </div>
     </section>
 
+    <!-- Benchmark Visualization -->
+    <section class="gallery benchmark-viz">
+        <div class="container">
+            <h2>See It In Action</h2>
+            <p class="section-subtitle">Artifact detection on synthetic benchmark with ground truth</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/before_after.png" alt="Before and After QC">
+                    <h4>Before → After</h4>
+                    <p>2,500 spots reduced to 2,113 clean spots (84.5%)</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/artifact_detection.png" alt="Artifact Detection">
+                    <h4>Artifact Detection</h4>
+                    <p>Color-coded: green=clean, red=edge, orange=fold, purple=hole</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/quality_score.png" alt="Quality Score Heatmap">
+                    <h4>Quality Score</h4>
+                    <p>Continuous 0-1 score per spot (red=low, green=high)</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/raw_expression.png" alt="Raw Expression">
+                    <h4>Raw Expression</h4>
+                    <p>Log total UMI counts before QC filtering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Visual Gallery - Real Samples -->
-    <section class="gallery">
+    <section class="gallery real-samples">
         <div class="container">
             <h2>Real Tissue Samples</h2>
             <p class="section-subtitle">QC results on public 10x Visium datasets with H&E histology</p>
