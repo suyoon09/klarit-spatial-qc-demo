@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klari.T — Spatial QC Engine</title>
+    <meta name="description" content="Automated quality control for spatial transcriptomics. Signal from noise.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">Spatial Transcriptomics QC</div>
+            <h1>Signal from Noise</h1>
+            <p class="hero-subtitle">Automated quality control for spatial transcriptomics data. Identify artifacts,
+                validate spots, and export analysis-ready datasets.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value" id="f1-score">90.6%</span>
+                    <span class="stat-label">Clean Spot F1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="precision">93.5%</span>
+                    <span class="stat-label">Precision</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="artifact-recall">100%</span>
+                    <span class="stat-label">Fold/Hole Detection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three-Tier Architecture -->
+    <section class="architecture">
+        <div class="container">
+            <h2>Three-Tier QC Framework</h2>
+            <p class="section-subtitle">Comprehensive quality control from tissue to transcript</p>
+
+            <div class="tiers">
+                <div class="tier">
+                    <div class="tier-icon">🔬</div>
+                    <h3>Tier 1: Tissue Integrity</h3>
+                    <p>Physical artifact detection: edge effects, tissue folds, holes, and debris.</p>
+                    <ul>
+                        <li>Edge distance calculation</li>
+                        <li>Fold detection (abnormal counts)</li>
+                        <li>Hole/damage identification</li>
+                    </ul>
+                </div>
+
+                <div class="tier">
+                    <div class="tier-icon">🧬</div>
+                    <h3>Tier 2: Molecular Quality</h3>
+                    <p>Signal validity metrics: UMI counts, gene diversity, and mitochondrial content.</p>
+                    <ul>
+                        <li>Adaptive MAD-based thresholds</li>
+                        <li>MT% stress detection</li>
+                        <li>Gene complexity filtering</li>
+                    </ul>
+                </div>
+
+                <div class="tier">
+                    <div class="tier-icon">📍</div>
+                    <h3>Tier 3: Spatial Consistency</h3>
+                    <p>Neighborhood coherence: permeabilization artifacts and local outliers.</p>
+                    <ul>
+                        <li>Neighbor correlation analysis</li>
+                        <li>Permeabilization detection</li>
+                        <li>Spatial outlier flagging</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benchmark Results -->
+    <section class="results">
+        <div class="container">
+            <h2>Benchmark Performance</h2>
+            <p class="section-subtitle">Validated on synthetic dataset with ground-truth artifact labels</p>
+
+            <div class="results-grid">
+                <div class="result-card main">
+                    <h3>Clean Spot Identification</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">F1 Score</span>
+                        <span class="metric-value highlight">90.6%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Precision</span>
+                        <span class="metric-value">93.5%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Recall</span>
+                        <span class="metric-value">98.6%</span>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Artifact Detection by Type</h3>
+                    <div class="artifact-breakdown">
+                        <div class="artifact-row">
+                            <span>Tissue Fold</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="artifact-row">
+                            <span>Holes/Damage</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="artifact-row">
+                            <span>High MT% (Damaged)</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                            <span>100%</span>
+                        </div>
+                        <div class="artifact-row">
+                            <span>Edge Effects</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 7%"></div>
+                            </div>
+                            <span>6.6%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Dataset Summary</h3>
+                    <div class="metric-row">
+                        <span class="metric-label">Total Spots</span>
+                        <span class="metric-value">2,500</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Clean (Predicted)</span>
+                        <span class="metric-value">2,113 (84.5%)</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Flagged</span>
+                        <span class="metric-value">387 (15.5%)</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Mean Quality Score</span>
+                        <span class="metric-value">0.85</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Support -->
+    <section class="platforms">
+        <div class="container">
+            <h2>Platform Support</h2>
+            <div class="platform-logos">
+                <div class="platform">
+                    <strong>Visium</strong>
+                    <span>10x Genomics</span>
+                </div>
+                <div class="platform">
+                    <strong>Xenium</strong>
+                    <span>10x Genomics</span>
+                </div>
+                <div class="platform">
+                    <strong>CosMx</strong>
+                    <span>NanoString</span>
+                </div>
+                <div class="platform">
+                    <strong>h5ad</strong>
+                    <span>AnnData Format</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Roadmap -->
+    <section class="roadmap">
+        <div class="container">
+            <h2>Future Enhancements</h2>
+            <p class="section-subtitle">Building toward the frontier of spatial transcriptomics AI</p>
+
+            <div class="roadmap-items">
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">🧪</div>
+                    <h4>Ambient RNA Deconvolution</h4>
+                    <p>CellBender/SoupX integration for background signal removal</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">🤖</div>
+                    <h4>HEST-1k Integration</h4>
+                    <p>Histology foundation models for CV-based artifact detection</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon">🌐</div>
+                    <h4>SpaFoundation</h4>
+                    <p>Spatial transcriptomics foundation model embedding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <strong>Klari.T</strong>
+                    <p>We distinguish noise from signal.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/klarit-ai">GitHub</a>
+                    <a href="mailto:contact@klarit.ai">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Klari.T. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
